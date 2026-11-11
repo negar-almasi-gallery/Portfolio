@@ -1,0 +1,8 @@
+title: "نگار الماسی | گالری سفال و سرامیک"
+description: "گالری نمونه‌کارهای سفال و سرامیک نگار الماسی"
+url: "https://negar-almasi-gallery.github.io"
+baseurl: "/Portfolio"
+lang: fa
+exclude:
+  - README.md
+  - README_FA.md
