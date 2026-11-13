@@ -7,13 +7,17 @@ permalink: /
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#f7cc3d" />
+  <meta name="theme-color" content="#f4c83e" />
+  <meta name="color-scheme" content="light" />
   <meta name="description" content="گالری آثار سفالی و سرامیکی نگار الماسی؛ مجموعه‌ای از آثار دست‌ساز و تجربه‌های هنری." />
   <meta property="og:title" content="نگار الماسی | گالری آثار سفالی" />
   <meta property="og:description" content="دنیایی از خاک، نقش و هنر دست" />
-  <meta property="og:image" content="{{ '/posters/01-relief.jpg' | absolute_url }}" />
+  <meta property="og:image" content="{{ '/assets/social-cover.jpg' | absolute_url }}" />
   <title>نگار الماسی | گالری سفال و سرامیک</title>
   <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}" />
 </head>
 <body>
@@ -36,38 +40,39 @@ permalink: /
         <div class="hero-copy">
           <div class="eyebrow"><span class="eye-line"></span> ساخته‌شده با دست، آفریده‌شده با عشق</div>
           <h1 id="hero-title">وقتی خاک،<br /><span class="highlight">قصه</span> می‌گوید<span class="hero-stop">.</span></h1>
-          <p>به گالری من خوش آمدید؛ جایی برای تماشای نقش‌ها، بافت‌ها و روایت‌هایی که آرام‌آرام از دل خاک شکل می‌گیرند.</p>
+          <p>به گالری آثار من خوش آمدید؛ مجموعه‌ای از تجربه‌های هنری و کارگاهی در سفال و سرامیک، با تأکید بر نقش‌برجسته و اجرای دستی.</p>
           <div class="hero-actions"><a class="btn btn-dark" href="#gallery">تماشای نمونه‌کارها <span aria-hidden="true">↙</span></a><a class="btn btn-link" href="#about">بیشتر درباره من <span aria-hidden="true">←</span></a></div>
           <div class="hero-note"><span class="note-seal">✳</span><span>هر اثر، تجربه‌ای یگانه از<br />ذوق، تمرین و ساخت دست‌ساز</span></div>
         </div>
-        <div class="hero-visual" aria-label="نمایی از تابلوی سفالی دست‌ساز نگار الماسی">
+        <div class="hero-visual" id="heroVisual" aria-label="نمایی از نمونه‌کارهای سفال و سرامیک نگار الماسی">
           <div class="visual-orbit visual-orbit-1"></div><div class="visual-orbit visual-orbit-2"></div>
-          <div class="hero-image-shell"><img src="{{ '/posters/01-relief.jpg' | relative_url }}" alt="نمای واقعی از تابلوی سفالی نقش‌برجسته ساخته نگار الماسی" /></div>
+          <div class="hero-image-shell" id="heroImageShell"><span class="hero-placeholder" aria-hidden="true">ن</span><img id="heroArtworkImage" alt="نمونه‌کاری از آثار سفالی و سرامیکی نگار الماسی" decoding="async" fetchpriority="high" hidden /></div>
           <div class="floating-label"><span class="floating-icon">✺</span><span>از خاک تا نقش<br/><strong>هنرِ دست</strong></span></div>
-          <div class="hero-number"><strong>01</strong><span>آغاز گالری</span></div>
+          <div class="hero-number"><strong>ART</strong><span>گالری شخصی</span></div>
         </div>
       </section>
 
       <section class="works-section" id="gallery" aria-labelledby="works-title">
         <div class="section-title-row"><div><span class="kicker">PORTFOLIO / نمونه‌کارها</span><h2 id="works-title">ردّ دست روی خاک <span class="asterisk">✳</span></h2><p>از نزدیک، جزئیات هر اثر را ببینید و ویدیوی آن را تماشا کنید.</p></div><div class="works-count" aria-live="polite"><strong id="worksCount">۱</strong><span>اثر در گالری</span></div></div>
-        <div id="galleryGrid" class="gallery-grid"><div class="fallback-card">در حال بارگذاری آثار...</div></div>
-        <div class="gallery-bottom"><span>● هر اثر به دست هنرمند ساخته شده است.</span><span>برای تماشای جزئیات، روی اثر بزنید ↗</span></div>
+        <div id="galleryFilters" class="gallery-filters" aria-label="فیلتر دسته‌بندی آثار" hidden></div>
+        <div id="galleryGrid" class="gallery-grid" aria-live="polite"><div class="fallback-card">در حال آماده‌سازی گالری...</div></div>
+        <div class="gallery-bottom"><span>● مجموعه‌ای از تجربه‌های هنری و کارگاهی</span><span>برای تماشای جزئیات هر اثر، روی آن بزنید.</span></div>
       </section>
 
       <section class="statement"><span class="statement-star">✺</span><p>زیبایی، گاهی از ساده‌ترین چیزها شروع می‌شود؛<br/>از <em>یک مشت خاک</em> و شوقِ ساختن.</p><span class="statement-flower">✳</span></section>
 
       <section class="about-section" id="about">
         <div class="about-art"><div class="about-big">ن</div><span class="about-petal one">✳</span><span class="about-petal two">✳</span><div class="about-caption">ART • CLAY • IMAGINATION</div></div>
-        <div class="about-copy"><span class="kicker">MEET THE ARTIST / درباره هنرمند</span><h2>من نگارم؛<br/><span>عاشق خلق‌کردن.</span></h2><p>دانش‌آموخته گرافیک و فعال در حوزه سفال و سرامیک هستم. تجربه کارگاهی و آموزش در تکنیک‌های فرم‌دهی، ریخته‌گری، نقش‌برجسته و لعاب‌کاری، مسیر هنری من را شکل داده‌اند.</p><div class="skill-tags"><span>نقش‌برجسته</span><span>ساخت دستی</span><span>ریخته‌گری</span><span>نقاشی روی سفال</span></div></div>
+        <div class="about-copy"><span class="kicker">MEET THE ARTIST / درباره هنرمند</span><h2>من نگارم؛<br/><span>عاشق خلق‌کردن.</span></h2><p>دانش‌آموخته گرافیک و فعال در حوزه سفال و سرامیک هستم. آموزش تخصصی و تجربه کارگاهی در فرم‌دهی با دست، ریخته‌گری، نقش‌برجسته و لعاب‌کاری، بخشی از مسیر هنری من است.</p><div class="skill-tags"><span>نقش‌برجسته</span><span>ساخت دستی</span><span>ریخته‌گری</span><span>نقاشی روی سفال</span></div></div>
       </section>
 
       <section class="contact-section" id="contact"><div class="contact-decoration">✳</div><div><span class="kicker">LET'S CONNECT</span><h2>برای همکاری یا گفت‌وگو<br/><em>در ارتباط باشیم.</em></h2><p>برای مشاهده جزئیات بیشتر آثار یا گفت‌وگو درباره همکاری هنری، خوشحال می‌شوم پیام بدهید.</p></div><div class="contact-actions"><a class="btn btn-white" href="mailto:almasinegar22@gmail.com">ارسال ایمیل <span aria-hidden="true">↗</span></a><a class="contact-link" href="tel:+989331946969" dir="ltr">+98 933 194 6969</a></div></section>
     </main>
 
-    <footer class="site-footer"><div><strong>نگار الماسی</strong><span>گالری شخصی آثار سفال و سرامیک</span></div><div class="footer-right"><a href="https://github.com/negar-almasi-gallery/Portfolio/tree/main/videos" target="_blank" rel="noopener noreferrer">مدیریت آثار در GitHub <span aria-hidden="true">↗</span></a><a href="#top">بازگشت به بالا ↑</a></div></footer>
+    <footer class="site-footer"><div><strong>نگار الماسی</strong><span>گالری شخصی آثار سفال و سرامیک</span></div><div class="footer-right"><a href="mailto:almasinegar22@gmail.com">ارتباط با هنرمند</a><a href="#top">بازگشت به بالا ↑</a></div></footer>
   </div>
 
-  <dialog class="video-dialog" id="videoDialog" aria-labelledby="dialogTitle"><div class="dialog-top"><div><span class="dialog-kicker">نمایش اثر</span><h3 id="dialogTitle">ویدیوی اثر</h3></div><button class="close-dialog" type="button" id="closeDialog" aria-label="بستن پنجره">×</button></div><video id="dialogVideo" controls playsinline preload="metadata"></video><p id="dialogDescription"></p><div class="dialog-bottom"><span id="dialogTechnique"></span><button type="button" class="copy-link" id="copyLink">کپی لینک این اثر ↗</button></div></dialog>
+  <dialog class="video-dialog" id="videoDialog" aria-labelledby="dialogTitle"><div class="dialog-top"><div><span class="dialog-kicker">نمایش اثر</span><h3 id="dialogTitle">ویدیوی اثر</h3></div><button class="close-dialog" type="button" id="closeDialog" aria-label="بستن پنجره">×</button></div><video id="dialogVideo" controls playsinline preload="none"></video><p id="videoError" class="video-error" role="status" hidden>پخش ویدیو ممکن نیست. لطفاً دوباره تلاش کنید.</p><p id="dialogDescription"></p><div class="dialog-bottom"><span id="dialogTechnique"></span><button type="button" class="copy-link" id="copyLink">کپی لینک این اثر ↗</button></div></dialog>
 
   <script type="application/json" id="galleryData">
 [
