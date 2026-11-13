@@ -76,18 +76,25 @@ permalink: /
 
   <script type="application/json" id="galleryData">
 [
-{%- assign needs_comma = false -%}
-{%- assign files = site.static_files | sort: 'path' -%}
-{%- for f in files -%}
-  {%- if f.path contains '/videos/' and f.extname == '.mp4' -%}
-    {%- assign meta = site.data.artworks[f.basename] -%}
-    {%- if needs_comma -%},{%- endif -%}
-    {"id":{{ f.basename | jsonify }},"title":{{ meta.title | default: f.basename | replace: '-', ' ' | jsonify }},"category":{{ meta.category | default: 'سفال و سرامیک' | jsonify }},"technique":{{ meta.technique | default: 'ساخته‌شده با دست' | jsonify }},"description":{{ meta.description | default: 'اثری دست‌ساز از مجموعه آثار سفال و سرامیک نگار الماسی.' | jsonify }},"featured":{{ meta.featured | default: false | jsonify }},"video":{{ f.path | relative_url | jsonify }},"poster":{{ '/posters/' | append: f.basename | append: '.jpg' | relative_url | jsonify }}}
-    {%- assign needs_comma = true -%}
+{%- assign has_item = false -%}
+{%- for pair in site.data.portfolio -%}
+  {%- assign work = pair[1] -%}
+  {%- if work.published == true and work.video and work.video != '' -%}
+    {%- if has_item -%},{%- endif -%}
+    {"id": {{ pair[0] | jsonify }},
+     "title": {{ work.title | default: 'اثر بدون عنوان' | jsonify }},
+     "category": {{ work.category | default: 'سفال و سرامیک' | jsonify }},
+     "technique": {{ work.technique | default: 'اثر دست‌ساز' | jsonify }},
+     "description": {{ work.description | default: '' | jsonify }},
+     "featured": {{ work.featured | default: false | jsonify }},
+     "sort_order": {{ work.sort_order | default: 100 | jsonify }},
+     "video": {{ work.video | jsonify }},
+     "poster": {{ work.poster | default: '' | jsonify }}}
+    {%- assign has_item = true -%}
   {%- endif -%}
 {%- endfor -%}
 ]
-  </script>
+</script>
   <script src="{{ '/assets/app.js' | relative_url }}" defer></script>
 </body>
 </html>

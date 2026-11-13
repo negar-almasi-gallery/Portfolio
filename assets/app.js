@@ -23,7 +23,7 @@
   } catch (error) {
     console.error('خطا در خواندن اطلاعات گالری:', error);
   }
-  works.sort((a, b) => Number(Boolean(b.featured)) - Number(Boolean(a.featured)) || text(a.id).localeCompare(text(b.id), 'fa'));
+  works.sort((a, b) => Number(Boolean(b.featured)) - Number(Boolean(a.featured)) || (Number(a.sort_order ?? 100) - Number(b.sort_order ?? 100)) || text(a.id).localeCompare(text(b.id), 'fa'));
   const findHashWork = () => {
     try { return works.find((w) => text(w.id) === decodeURIComponent(location.hash.slice(1))); }
     catch { return undefined; }
