@@ -1,0 +1,102 @@
+# Pages CMS – گالری شخصی نگار الماسی
+# https://pagescms.org/docs/configuration/
+# هر اثر یک فایل مستقل در _data/portfolio دارد؛ نیازی به ویرایش YAML نیست.
+media:
+  - name: videos
+    label: ویدیوهای آثار
+    input: videos
+    output: /Portfolio/videos
+    extensions: [mp4]
+    categories: [video]
+    rename: safe
+  - name: covers
+    label: تصاویر جلد آثار
+    input: posters
+    output: /Portfolio/posters
+    extensions: [jpg, jpeg, png, webp]
+    categories: [image]
+    rename: safe
+
+content:
+  - name: artworks
+    label: آثار هنری
+    type: collection
+    path: _data/portfolio
+    format: yaml
+    subfolders: false
+    filename:
+      template: "{year}{month}{day}-{hour}{minute}{second}.yml"
+      field: false
+    view:
+      primary: title
+      fields: [title, category, published, featured]
+      sort: [sort_order, title]
+      search: [title, description, category]
+      default:
+        sort: sort_order
+        order: asc
+    operations:
+      create: true
+      rename: false
+      delete: true
+    fields:
+      - name: title
+        label: نام اثر
+        type: string
+        required: true
+        description: عنوان کوتاه و دقیق اثر را بنویسید.
+      - name: video
+        label: ویدیوی محصول (MP4)
+        type: file
+        required: true
+        description: "ویدیوی موجود را انتخاب کنید. برای فایل‌های بزرگ‌تر از محدودیت پنل، ابتدا در GitHub/videos آپلود کنید و بعد از این فیلد انتخابش کنید."
+        options:
+          media: videos
+          categories: [video]
+          extensions: [mp4]
+      - name: poster
+        label: تصویر جلد (اختیاری)
+        type: image
+        description: عکس اصلی اثر را آپلود یا از فایل‌های موجود انتخاب کنید.
+        options:
+          media: covers
+          categories: [image]
+          extensions: [jpg, jpeg, png, webp]
+      - name: category
+        label: دسته‌بندی
+        type: string
+        default: سفال و سرامیک
+        description: مانند «نقش‌برجسته»، «آثار حجمی» یا «ظروف سرامیکی».
+      - name: technique
+        label: تکنیک ساخت
+        type: string
+        description: تکنیک واقعی به‌کاررفته در ساخت اثر.
+      - name: description
+        label: توضیح اثر
+        type: text
+        description: موضوع، ویژگی‌های دیداری و مراحل ساخت اثر را مختصر معرفی کنید.
+      - name: published
+        label: منتشر شود؟
+        type: boolean
+        default: false
+        description: تا زمانی که تأیید نشده، خاموش بماند. فقط آثار تأییدشده در سایت نمایش داده می‌شوند.
+      - name: featured
+        label: اثر شاخص
+        type: boolean
+        default: false
+        description: آثار شاخص در ابتدای گالری قرار می‌گیرند.
+      - name: sort_order
+        label: ترتیب نمایش
+        type: number
+        default: 100
+        description: عدد کوچک‌تر زودتر نمایش داده می‌شود.
+
+settings:
+  content:
+    merge: true
+  commit:
+    identity: app
+    templates:
+      create: "content: add {filename} via Pages CMS"
+      update: "content: update {filename} via Pages CMS"
+      delete: "content: remove {filename} via Pages CMS"
